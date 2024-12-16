@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # This is the hosted runner
     steps:
     - uses: actions/checkout@v4
       with:
@@ -17,7 +17,8 @@ jobs:
       with:
         type: git
         app: test_db
-        environment: test_db2  # Use your Aptible environment name here
+        environment: test_db1  # Use your Aptible environment name here
         username: ${{ secrets.APTIBLE_USERNAME }}
         password: ${{ secrets.APTIBLE_PASSWORD }}
+
 
