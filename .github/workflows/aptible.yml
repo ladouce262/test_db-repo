@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04  # Specify the version explicitly to avoid future issues  
+    runs-on: ubuntu-22.04  # Using ubuntu-22.04 to avoid future issues
     steps:
     - uses: actions/checkout@v4
       with:
@@ -16,9 +16,8 @@ jobs:
       uses: aptible/aptible-deploy-action@v4
       with:
         type: git
-        app: test_db
-        environment: test_db1  # Use your Aptible environment name here
+        app: test_db        # Corrected app name
+        environment: test_db1  # Corrected environment name
         username: ${{ secrets.APTIBLE_USERNAME }}
         password: ${{ secrets.APTIBLE_PASSWORD }}
-
 
