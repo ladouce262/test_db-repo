@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # This is the hosted runner
+    runs-on: ubuntu-22.04  # Specify the version explicitly to avoid future issues  
     steps:
     - uses: actions/checkout@v4
       with:
